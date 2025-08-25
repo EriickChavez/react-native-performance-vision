@@ -1,10 +1,3 @@
-¡Claro, bro! 🔥  
-
-Aquí tienes el **`README.md` en inglés**, listo para **copiar y pegar directamente** en tu proyecto.  
-Sin comentarios, sin formato extra. Solo el texto limpio.
-
----
-
 ```md
 # react-native-performance-vision 🚀
 
