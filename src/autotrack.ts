@@ -1,7 +1,12 @@
 let originalCreateElement: any = null;
 
 export const enableAutoTracking = (trackRenderFn: (name: string, file?: string) => void) => {
-    if (!__DEV__ || !global.React || originalCreateElement) return;
+    if (!__DEV__ || !global.React || originalCreateElement) {
+        console.log('⚠️ [rnpv] No se activó auto-tracking');
+        return;
+    }
+
+    console.log('✅ [rnpv] Auto-tracking activado con éxito');
 
     originalCreateElement = global.React.createElement;
 
@@ -14,6 +19,7 @@ export const enableAutoTracking = (trackRenderFn: (name: string, file?: string) 
 
         if (typeof type === 'function' && componentName !== 'Anonymous') {
             const filePath = props?.__source?.fileName || 'unknown';
+            console.log(`🎯 [rnpv] Render detectado: ${componentName}`, filePath); // 👈 Log clave
             trackRenderFn(componentName, filePath);
         }
 
